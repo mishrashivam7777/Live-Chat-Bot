@@ -1,20 +1,17 @@
-const key =""
+const API_KEY =''
  
-const output=document.querySelector('#output')
+const outputi=document.querySelector('#output')
 const inputele =document.querySelector('input')
 const submitbutton =document.querySelector('#submit') 
 const historyele=document.querySelector('.history')
 const buttonele= document.querySelector('button')
-function changeInput(value) {
-    const inputelement =document.querySelector('input')
-    inputelement.value=value
-}
+
 async function getmessage() {
-    // console.log('clicked')
+  console.log("click")
     const options ={
      method:'POST',
      headers:{
-        'Authorization': `Bearer ${key} `,
+        'Authorization': `Bearer ${API_KEY} `,
         'Content-Type':'application/json'
      },
      body:JSON.stringify({
@@ -24,11 +21,13 @@ async function getmessage() {
      })
 
     }
+    // console.log('clicked')
     try {
         const response =await fetch ('https://api.openai.com/v1/chat/completions',options)
         const  data= await response.json()
         console.log(data)
-        output.textcontent=data.choices[0].message.content
+        outputi.innerHTML=data.choices[0].message.content
+        // inputele=''
         if(data.choices[0].message.content){
             const pele=document.createElement('p')
             pele.textContent=inputele.value
@@ -41,9 +40,20 @@ async function getmessage() {
     }
 }
 
-submitbutton.addEventListener('click',getmessage())
+submitbutton.addEventListener('click',getmessage)
+  
+ function relod() {
+    console.log("clickedd")
+    location.reload();
+ }
 function clearscreen() {
     inputele.value=''
 }
 
-buttonele.addEventListener('click',clearscreen())
+function changeInput(value) {
+    const inputelement =document.querySelector('input')
+    inputelement.value=value
+    
+}
+// buttonele.addEventListener('click',clearscreen)
+console.log(inputele.value)
