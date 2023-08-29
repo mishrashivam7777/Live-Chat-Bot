@@ -7,29 +7,56 @@
   <link rel="stylesheet" href="chat.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Borel&family=Josefin+Sans:ital,wght@0,400;1,300&family=Kanit&family=Open+Sans:wght@300;400&family=Oswald&family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
-  <section class="side-bar">
-    <button  onclick="clearscreen()">NEW CHAT</button>
+  <section id="mySidebar"  class="side-bar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeSidebar()">&times;</a>
+    <button  onclick="clearscreen()">+ NEW CHAT</button>
     <button onclick="relod()">CLEAR ALL</button>
+    <h3 style="border-bottom: 2px solid whitesmoke;margin-top: 10px;">CHAT HISTORY</h3>
     <DIV class="history"></DIV>
     <div class="nav">
       <p>Made by Shivam</p>
     </div>
   </section>
   <section class="main">
-    <h1>ShivamGPT</h1>
-    <p id="output"></p>
+    <h2>Chat<span style="color: rgba(255, 255, 255, 0.5);">GPT</span></h2>
+    <button class="openbtn" onclick="openSidebar()">&#9776;</button>
+    <div class="dots">
+      <span style="--i:1;"></span>
+      <span style="--i:2;"></span>
+      <span style="--i:3;"></span>
+      <span style="--i:4;"></span>
+      <span style="--i:5;"></span>
+      <span style="--i:6;"></span>
+      <span style="--i:7;"></span>
+      <span style="--i:8;"></span>
+      <span style="--i:9;"></span>
+      <span style="--i:10;"></span>
+      <span style="--i:11;"></span>
+      <span style="--i:12;"></span>
+      <span style="--i:13;"></span>
+      <span style="--i:14;"></span>
+      <span style="--i:15;"></span>
+    </div>
+     <div class="message-container">
+      
+     </div>
+     
+    <!-- <p id="output"></p> -->
     <div class="bottom-section">
       <div class="input-container">
        <input type="text" id="input">
+       <i class="fa-solid fa-trash"></i>
        <div id="submit" >➢</div>
       </div>
     </div>
-    <p class="info"> chatgpt</p>
+    <p class="info">Free Research Preview. ChatGPT may produce inaccurate information about people, places, or facts. ChatGPT August 3 Version</p>
   </section>
   
    <script src="script.js"></script>
+   <!-- <script src="demo.js"></script> -->
 </body>
 </html>
